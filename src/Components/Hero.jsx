@@ -5,7 +5,7 @@ const Hero = () => {
     <>
     <section id='#her0' className='noisy flex-center relative w-screen h-screen'>
         
-<h1 className='  font-[modern-negra] [title] md:text-9xl text-3xl text-yellow max-w-40'>Mojito</h1>
+<h1 className=' font-[]  xl:text-[18vw] text-[17vw] lg:text-[17vw] md:text-[15vw] text-yellow   uppercase'>Mojito</h1>
 
 
 
