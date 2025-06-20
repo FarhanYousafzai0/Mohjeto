@@ -10,8 +10,8 @@ gsap.registerPlugin(ScrollTrigger,SplitText);
 const App = () => {
   return (
     <>
-   <div className='w-screen h-screen bg-amber-500 flex-center text-8xl '>Hello,Gsap</div>
-    </>
+    <Home/>
+   </>
   )
 }
 
