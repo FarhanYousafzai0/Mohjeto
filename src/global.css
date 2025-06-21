@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
 
 @import "tailwindcss";
-
+@import 'lenis/dist/lenis.css';
 @font-face {
     font-family: "Modern Negra";
     src: url("/Fonts/Modern Negra Demo.ttf") format("truetype");
