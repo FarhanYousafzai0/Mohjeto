@@ -40,9 +40,9 @@ const Nav = () => {
       className="p-4  flex items-center justify-between fixed top-0 left-0 w-full z-50 text-white transition-all duration-300"
     >
       {/* Logo */}
-      <a href="#nav" className="flex items-center gap-2 text-2xl md:text-2xl  pointer-events-none font-[modern-negra]">
-        <img src="/images/logo.png" alt="Logo" className="w-8 h-8 object-contain " />
-      Alchemy Bar
+      <a href="#nav" className="flex items-center  text-1xl font-semibold uppercase  pointer-events-none ">
+        <img src="/images/Logo3.png" alt="Logo" className="w-10 h-10 object-contain " />
+   Cooktailique
       </a>
 
       {/* Navigation Links */}

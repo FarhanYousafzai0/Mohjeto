@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/all';
 import { useGSAP } from '@gsap/react';
 import Magnetic from './Magnetic';
+import { useMediaQuery } from 'react-responsive';
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const Hero = () => {
+
+
+
+	const videoRef = useRef();
+
+
+ const isMobile = useMediaQuery({ maxWidth: 767 });
+
+
   useGSAP(() => {
     const heroSplit = new SplitText('.title', { type: 'chars,words' });
     const subSplit = new SplitText('.subtitle', { type: 'lines,words' });
@@ -40,10 +50,32 @@ const Hero = () => {
       })
       .to('.right-leaf', { yPercent: 100 }, 0)
       .to('.left-leaf', { yPercent: -100 }, 0);
+
+
+
+const startValue = isMobile ? "top 50%" : "center 60%";
+	const endValue = isMobile ? "120% top" : "bottom top";
+
+	let tl = gsap.timeline({
+	 scrollTrigger: {
+		trigger: "video",
+		start: startValue,
+		end: endValue,
+		scrub: true,
+		pin: true,
+	 },
+	});
+	
+	videoRef.current.onloadedmetadata = () => {
+	 tl.to(videoRef.current, {
+		currentTime: videoRef.current.duration,
+		bottom:0,
+	 });
+	};
   }, []);
 
   return (
-    <section id="hero" className="noisy relative h-screen overflow-hidden">
+   <> <section id="hero" className="noisy    overflow-hidden">
       <h1 className="title flex-center md:mt-10 mt-20 xl:text-[18vw] text-[12vw] lg:text-[17vw] md:text-[15vw] font-bold text-white text-center font-[modern-negra] uppercase">
        Citrino
       </h1>
@@ -81,7 +113,7 @@ const Hero = () => {
             <Magnetic>
               <a
                 href="#cocktails"
-                className="subtitle inline-block py-3 px-6 rounded-full border-2 border-white text-white font-medium tracking-wide hover:bg-white hover:text-black transition-colors duration-300"
+                className="subtitle inline-block py-3 px-6 rounded-full hover:border-2 hover:border-white text-white font-medium tracking-wide   transition-colors duration-300"
               >
                 View Cocktails
               </a>
@@ -90,6 +122,19 @@ const Hero = () => {
         </div>
       </div>
     </section>
+	
+	<div className='w-full video h-[100%]  absolute  bottom-0 left-0 md:object-contain  object-cover'>
+
+<video
+		 ref={videoRef}
+		 muted
+		 playsInline
+		 preload="auto"
+		 src="/videos/output.mp4"
+		/>
+
+	</div>
+	</>
   );
 };
 

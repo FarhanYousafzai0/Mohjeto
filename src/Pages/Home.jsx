@@ -8,7 +8,7 @@ import About from '../Components/About'
 const Home = () => {
   return (
     <>
-<main >
+<main className='w-full overflow-x-hidden' >
 <Nav/>
 <Hero/>
 <About/>
