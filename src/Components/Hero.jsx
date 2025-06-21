@@ -69,13 +69,13 @@ const startValue = isMobile ? "top 50%" : "center 60%";
 	videoRef.current.onloadedmetadata = () => {
 	 tl.to(videoRef.current, {
 		currentTime: videoRef.current.duration,
-		bottom:0,
+		
 	 });
 	};
   }, []);
 
   return (
-   <> <section id="hero" className="noisy    overflow-hidden">
+   <> <section id="hero" className="noisy     overflow-hidden">
       <h1 className="title flex-center md:mt-10 mt-20 xl:text-[18vw] text-[12vw] lg:text-[17vw] md:text-[15vw] font-bold text-white text-center font-[modern-negra] uppercase">
        Citrino
       </h1>
@@ -123,7 +123,7 @@ const startValue = isMobile ? "top 50%" : "center 60%";
       </div>
     </section>
 	
-	<div className='w-full video h-[100%]  absolute  bottom-0 left-0 md:object-contain  object-cover'>
+	<div className='w-full video md:h-[100%]  absolute  bottom-0 left-0 md:object-contain  object-cover'>
 
 <video
 		 ref={videoRef}
