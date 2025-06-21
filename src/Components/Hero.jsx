@@ -123,7 +123,7 @@ const startValue = isMobile ? "top 50%" : "center 60%";
       </div>
     </section>
 	
-	<div className='w-full video md:h-[100%]  absolute  bottom-0 left-0 md:object-contain  object-cover'>
+	<div className='w-full video h-[100%]  absolute  bottom-0 left-0 md:object-contain  object-cover'>
 
 <video
 		 ref={videoRef}
