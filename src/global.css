@@ -8,7 +8,7 @@
 }
 
 @theme {
-    --color-yellow: #e7d393;
+    --color-yellow: e7d393;
     --color-white-100: #efefef;
     --font-sans: "Mona Sans", sans-serif;
     --font-modern-negra: "Modern Negra", sans-serif;
@@ -866,4 +866,34 @@ body {
     font-size: 9px;
     border-radius: 50px;
   }
+}
+
+
+.circular-text {
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 100px;
+  position: relative;
+  height: 150px;
+  font-weight: bold;
+  position: absolute;
+  color: #fff;
+  font-weight: 900;
+  right:'20px' ;
+  bottom: 40;
+  text-align: center;
+  cursor: pointer;
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+}
+
+.circular-text span {
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-size: 16px;
+  transition: all 0.5s cubic-bezier(0, 0, 0, 1);
 }

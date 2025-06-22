@@ -1,9 +1,34 @@
 import React, { useRef } from 'react';
 import Magnetic from './Magnetic';
 import { useGSAP } from '@gsap/react';
-
+import { SplitText } from 'gsap/SplitText';
+import gsap from 'gsap';
 const About = () => {
   const textRef = useRef();
+
+
+
+
+  useGSAP(() => {
+	const titleSplit = SplitText.create('#about h2', {
+	 type: 'words'
+	})
+	
+	const scrollTimeline = gsap.timeline({
+	 scrollTrigger: {
+		trigger: '#about',
+		start: 'top center'
+	 }
+	})
+	
+	scrollTimeline
+	 .from(titleSplit.words, {
+		opacity: 0, duration: 1, yPercent: 100, ease: 'expo.out', stagger: 0.02
+	})
+	 .from('.top-grid div, .bottom-grid div', {
+		opacity: 0, duration: 1, ease: 'power1.inOut', stagger: 0.04,
+	}, '-=0.5')
+ })
 
   return (
     <div id="#about" className="relative p-10">
@@ -42,7 +67,7 @@ const About = () => {
       </div>
 
       {/* First Grid */}
-      <div className="w-full mt-10 px-5 md:px-10 py-0 grid grid-cols-1 md:grid-cols-12 gap-6 place-content-center relative overflow-hidden">
+      <div className="top-grid w-full mt-10 px-5 md:px-10 py-0 grid grid-cols-1 md:grid-cols-12 gap-6 place-content-center relative overflow-hidden">
         {/* Left Image */}
         <div className="md:col-span-3 rounded-3xl overflow-hidden relative group">
           <div className="noisy absolute inset-0 z-10" />
@@ -75,7 +100,7 @@ const About = () => {
       </div>
 
       {/* Second Grid */}
-      <div className="w-full px-5 md:px-10 py-10 grid grid-cols-1 md:grid-cols-12 gap-6 place-content-center relative">
+      <div className="bottom-grid w-full px-5 md:px-10 py-10 grid grid-cols-1 md:grid-cols-12 gap-6 place-content-center relative">
         <div className="md:col-span-8 rounded-3xl overflow-hidden h-80 relative group">
           <div className="noisy absolute inset-0 z-10" />
           <img

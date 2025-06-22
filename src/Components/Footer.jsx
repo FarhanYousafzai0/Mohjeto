@@ -6,7 +6,6 @@ const Footer = () => {
       <div className='w-screen h-screen'>
 
 
-
       </div>
     </>
   )
