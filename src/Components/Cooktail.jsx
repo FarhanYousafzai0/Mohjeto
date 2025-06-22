@@ -67,7 +67,9 @@ const Cocktail = () => {
 
     // Animate both leaves together
     leafTimeline.from('#c-left-leaf',{
-        x: 100, y: 100
+        x: -100, y: 100,
+        opacity:0,
+        stagger:0.06
     }
     
       
@@ -75,7 +77,9 @@ const Cocktail = () => {
 
 
      leafTimeline.from('#c-right-leaf',{
-        x: 100, y: 100
+        x: 100, y: 100,
+        opacity:0,
+         stagger:0.06
      }
       
       

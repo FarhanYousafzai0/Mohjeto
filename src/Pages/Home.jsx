@@ -3,6 +3,7 @@ import Nav from '../Components/Nav'
 import Hero from '../Components/Hero'
 import About from '../Components/About'
 import Cooktail from '../Components/Cooktail'
+import Footer from '../Components/Footer'
 
 
 
@@ -14,6 +15,7 @@ const Home = () => {
 <Hero/>
 <Cooktail/>
 <About/>
+<Footer/>
 </main>
       
     </>
