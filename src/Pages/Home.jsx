@@ -5,6 +5,8 @@ import About from '../Components/About'
 import Cooktail from '../Components/Cooktail'
 import Footer from '../Components/Footer'
 import Art from '../Components/Art'
+import Menu from '../Components/Menu'
+import Contact from '../Components/Contact'
 
 
 
@@ -14,13 +16,14 @@ const Home = () => {
     <>
 <main className='w-full overflow-x-hidden' >
 
-  
 
 <Nav/>
 <Hero/>
 <Cooktail/>
 <About/>
 <Art/>
+<Menu/>
+<Contact/>
 </main>
       
     </>
